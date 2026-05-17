@@ -11,7 +11,7 @@
   ],
   "modules-right": [
     "pulseaudio",
-    "network",
+    "custom/netvpn",
     "custom/resources",
     "custom/batteryprofile",
     "tray",
@@ -58,10 +58,13 @@
     "tooltip": true,
     "tooltip-format": "Volume: {volume}%\nLeft click: mute\nScroll: change volume\nRight click: volume control\nMiddle click: set 50%"
   },
-  "network": {
-    "format-wifi": " {essid}",
-    "format-ethernet": "󰈀 wired",
-    "format-disconnected": "󰖪 offline"
+  "custom/netvpn": {
+    "exec": "~/.config/waybar/scripts/netvpn.sh",
+    "return-type": "json",
+    "interval": 10,
+    "on-click": "~/.config/waybar/scripts/protonvpn-toggle.sh",
+    "on-click-right": "kitty -e protonvpn status",
+    "tooltip": true
   },
   "custom/batteryprofile": {
     "exec": "~/.config/waybar/scripts/battery-profile.sh",
@@ -86,12 +89,5 @@
     "tooltip": true,
     "tooltip-format": "Power menu",
     "on-click": "~/.config/waybar/scripts/power-menu.sh"
-  },
-  "custom/systemmonitor": {
-    "format": "󰍛",
-    "tooltip": true,
-    "tooltip-format": "System Monitor\nLeft click: Mission Center\nRight click: btop",
-    "on-click": "missioncenter",
-    "on-click-right": "kitty -e btop"
   }
 }

@@ -3,8 +3,10 @@
 BATTERY_PATH=$(find /sys/class/power_supply -maxdepth 1 -name "BAT*" | head -n 1)
 
 if [ -z "$BATTERY_PATH" ]; then
-    battery_text="No battery"
-    battery_tooltip="Battery: not found"
+    battery_icon="󰂑"
+    capacity="?"
+    battery_state="No battery"
+    status="not found"
 else
     capacity=$(cat "$BATTERY_PATH/capacity")
     status=$(cat "$BATTERY_PATH/status")
@@ -22,49 +24,50 @@ else
     fi
 
     case "$status" in
-    "Charging")
-        battery_icon=""
-        battery_state="Charging"
-        ;;
-    "Full")
-        battery_icon=""
-        battery_state="Plugged"
-        ;;
-    "Not charging")
-        battery_icon=""
-        battery_state="Plugged"
-        ;;
-    "Discharging")
-        battery_state="Battery"
-        ;;
-    *)
-        battery_state="$status"
-        ;;
-esac
-
-battery_text="${battery_icon} ${capacity}% ${battery_state}"
-battery_tooltip="Battery: ${capacity}%\nStatus: ${status}"
+        "Charging")
+            battery_icon=""
+            battery_state="Charging"
+            ;;
+        "Full")
+            battery_icon=""
+            battery_state="Plugged"
+            ;;
+        "Not charging")
+            battery_icon=""
+            battery_state="Plugged"
+            ;;
+        "Discharging")
+            battery_state="Battery"
+            ;;
+        *)
+            battery_state="$status"
+            ;;
+    esac
 fi
 
 profile=$(powerprofilesctl get 2>/dev/null)
 
 case "$profile" in
     "power-saver")
-        profile_text="󰌪 Saver"
+        profile_icon="󰌪"
+        profile_name="Power saver"
         ;;
     "balanced")
-        profile_text=" Balanced"
+        profile_icon=""
+        profile_name="Balanced"
         ;;
     "performance")
-        profile_text=" Performance"
+        profile_icon="󰓅"
+        profile_name="Performance"
         ;;
     *)
-        profile_text="Profile?"
+        profile_icon="?"
+        profile_name="Unknown"
         profile="unknown"
         ;;
 esac
 
-text="${battery_text}  ${profile_text}"
-tooltip="${battery_tooltip}\nPower profile: ${profile}\nLeft click: cycle power profile"
+text="${battery_icon} ${capacity}% ${profile_icon}"
+tooltip="Battery: ${capacity}%\nStatus: ${battery_state}\nPower profile: ${profile_name}\nLeft click: cycle power profile"
 
 printf '{"text":"%s","tooltip":"%s"}\n' "$text" "$tooltip"
