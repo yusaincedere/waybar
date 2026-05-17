@@ -41,7 +41,7 @@ window#waybar {
 
 #clock,
 #pulseaudio,
-#custom-netvpn,
+#custom-vpn,
 #custom-resources,
 #custom-batteryprofile,
 #tray,
@@ -61,20 +61,11 @@ window#waybar {
   color: #89b4fa;
 }
 
-#custom-netvpn {
-  padding: 0 14px;
-  border-radius: 10px;
-}
-
-#custom-netvpn.connected {
+#custom-vpn.connected {
   color: #a6e3a1;
 }
 
-#custom-netvpn.disconnected {
-  color: #f9e2af;
-}
-
-#custom-netvpn.offline {
+#custom-vpn.disconnected {
   color: #f38ba8;
 }
 #custom-resources {

@@ -11,7 +11,7 @@
   ],
   "modules-right": [
     "pulseaudio",
-    "custom/netvpn",
+    "custom/vpn",
     "custom/resources",
     "custom/batteryprofile",
     "tray",
@@ -58,10 +58,10 @@
     "tooltip": true,
     "tooltip-format": "Volume: {volume}%\nLeft click: mute\nScroll: change volume\nRight click: volume control\nMiddle click: set 50%"
   },
-  "custom/netvpn": {
-    "exec": "~/.config/waybar/scripts/netvpn.sh",
+  "custom/vpn": {
+    "exec": "~/.config/waybar/scripts/protonvpn-status.sh",
     "return-type": "json",
-    "interval": 10,
+    "interval": 5,
     "on-click": "~/.config/waybar/scripts/protonvpn-toggle.sh",
     "on-click-right": "kitty -e protonvpn status",
     "tooltip": true
