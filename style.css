@@ -1,40 +1,42 @@
 * {
-    border: none;
-    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", "Font Awesome 6 Free", sans-serif;
-    font-size: 16px;
-    min-height: 0;
+  border: none;
+  font-family:
+    "JetBrainsMono Nerd Font", "Symbols Nerd Font", "Font Awesome 6 Free",
+    sans-serif;
+  font-size: 16px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: rgba(20, 20, 28, 0.92);
-    color: #ffffff;
+  background: rgba(20, 20, 28, 0.92);
+  color: #ffffff;
 }
 
 #workspaces {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 #workspaces button {
-    padding: 0 10px;
-    margin: 5px 3px;
-    color: #a6adc8;
-    background: transparent;
-    border-radius: 10px;
+  padding: 0 10px;
+  margin: 5px 3px;
+  color: #a6adc8;
+  background: transparent;
+  border-radius: 10px;
 }
 
 #workspaces button.active {
-    color: #11111b;
-    background: #89b4fa;
+  color: #11111b;
+  background: #89b4fa;
 }
 
 #workspaces button:hover {
-    background: #313244;
-    color: #ffffff;
+  background: #313244;
+  color: #ffffff;
 }
 
 #window {
-    color: #cdd6f4;
-    padding: 0 12px;
+  color: #cdd6f4;
+  padding: 0 12px;
 }
 
 #clock,
@@ -47,50 +49,50 @@ window#waybar {
 #tray,
 #custom-systemmonitor,
 #custom-power {
-    background: #313244;
-    color: #cdd6f4;
-    padding: 0 12px;
-    margin: 5px 3px;
-    border-radius: 10px;
+  background: #313244;
+  color: #cdd6f4;
+  padding: 0 12px;
+  margin: 5px 3px;
+  border-radius: 10px;
 }
 
 #clock {
-    color: #f9e2af;
+  color: #f9e2af;
 }
 
 #pulseaudio {
-    color: #89b4fa;
+  color: #89b4fa;
 }
 
 #network {
-    color: #94e2d5;
+  color: #94e2d5;
 }
 
 #cpu {
-    color: #fab387;
+  color: #fab387;
 }
 
 #memory {
-    color: #cba6f7;
+  color: #cba6f7;
 }
 
 #battery {
-    color: #a6e3a1;
+  color: #a6e3a1;
 }
 
 #custom-power {
-    color: #f38ba8;
-    font-size: 18px;
-    padding: 0 14px;
+  color: #f38ba8;
+  font-size: 18px;
+  padding: 0 14px;
 }
 
 #custom-systemmonitor {
-    color: #cba6f7;
-    font-size: 18px;
-    padding: 0 14px;
+  color: #cba6f7;
+  font-size: 18px;
+  padding: 0 14px;
 }
 
 #custom-powerprofile {
-    color: #a6e3a1;
-    padding: 0 14px;
+  color: #a6e3a1;
+  padding: 0 14px;
 }
