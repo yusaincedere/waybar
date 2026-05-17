@@ -13,8 +13,7 @@
     "pulseaudio",
     "network",
     "custom/resources",
-    "battery",
-    "custom/powerprofile",
+    "custom/batteryprofile",
     "tray",
     "custom/systemmonitor",
     "custom/power"
@@ -61,6 +60,13 @@
     "format-ethernet": "󰈀 wired",
     "format-disconnected": "󰖪 offline"
   },
+  "custom/batteryprofile": {
+    "exec": "~/.config/waybar/scripts/battery-profile.sh",
+    "interval": 5,
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "~/.config/waybar/scripts/power-profile-toggle.sh"
+  },
   "custom/resources": {
     "exec": "~/.config/waybar/scripts/resources.sh",
     "interval": 3,
@@ -68,17 +74,6 @@
     "tooltip": true,
     "on-click": "missioncenter",
     "on-click-right": "kitty -e btop"
-  },
-  "battery": {
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
   },
   "tray": {
     "spacing": 10
@@ -95,12 +90,5 @@
     "tooltip-format": "System Monitor\nLeft click: Mission Center\nRight click: btop",
     "on-click": "missioncenter",
     "on-click-right": "kitty -e btop"
-  },
-  "custom/powerprofile": {
-    "interval": 5,
-    "tooltip": true,
-    "tooltip-format": "Power profile\nLeft click: cycle profile",
-    "exec": "~/.config/waybar/scripts/power-profile-status.sh",
-    "on-click": "~/.config/waybar/scripts/power-profile-toggle.sh"
   }
 }

@@ -43,8 +43,7 @@ window#waybar {
 #pulseaudio,
 #network,
 #custom-resources,
-#battery,
-#custom-powerprofile,
+#custom-batteryprofile,
 #tray,
 #custom-systemmonitor,
 #custom-power {
@@ -72,8 +71,9 @@ window#waybar {
   padding: 0 14px;
 }
 
-#battery {
+#custom-batteryprofile {
   color: #a6e3a1;
+  padding: 0 14px;
 }
 
 #custom-power {
@@ -85,10 +85,5 @@ window#waybar {
 #custom-systemmonitor {
   color: #cba6f7;
   font-size: 18px;
-  padding: 0 14px;
-}
-
-#custom-powerprofile {
-  color: #a6e3a1;
   padding: 0 14px;
 }
