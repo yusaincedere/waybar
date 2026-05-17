@@ -65,7 +65,7 @@
   },
   "custom/batteryprofile": {
     "exec": "~/.config/waybar/scripts/battery-profile.sh",
-    "interval": 5,
+    "interval": 1,
     "return-type": "json",
     "tooltip": true,
     "on-click": "~/.config/waybar/scripts/power-profile-toggle.sh"
