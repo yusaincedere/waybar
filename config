@@ -3,6 +3,7 @@
   "position": "top",
   "height": 44,
   "modules-left": [
+    "custom/home",
     "hyprland/workspaces",
     "hyprland/window"
   ],
@@ -18,11 +19,18 @@
     "custom/systemmonitor",
     "custom/power"
   ],
+  "custom/home": {
+    "format": "󰍜",
+    "tooltip": true,
+    "tooltip-format": "Left click: Desktop\nRight click: Home",
+    "on-click": "bash -lc 'mkdir -p \"$HOME/Desktop\"; setsid -f dolphin --new-window \"$HOME/Desktop\" >/dev/null 2>&1'",
+    "on-click-right": "bash -lc 'setsid -f dolphin --new-window \"$HOME\" >/dev/null 2>&1'"
+  },
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "active": "●",
+      "default": "○"
     }
   },
   "hyprland/window": {
