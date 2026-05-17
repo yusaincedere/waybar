@@ -1,0 +1,108 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 44,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+"modules-right": [
+  "pulseaudio",
+  "network",
+  "cpu",
+  "memory",
+  "battery",
+  "custom/powerprofile",
+  "tray",
+  "custom/systemmonitor",
+  "custom/power"
+],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 45
+  },
+
+  "clock": {
+    "format": " {:%H:%M}"
+  },
+
+  "pulseaudio": {
+  "format": "{icon} {volume}%",
+  "format-muted": "󰝟 muted",
+  "format-icons": {
+    "headphone": "",
+    "hands-free": "",
+    "headset": "",
+    "phone": "",
+    "portable": "",
+    "car": "",
+    "default": ["", "", ""]
+  },
+  "scroll-step": 5,
+  "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+  "on-click-right": "pavucontrol",
+  "on-click-middle": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 50%",
+  "tooltip": true,
+  "tooltip-format": "Volume: {volume}%\nLeft click: mute\nScroll: change volume\nRight click: volume control\nMiddle click: set 50%"
+},
+
+  "network": {
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 wired",
+    "format-disconnected": "󰖪 offline"
+  },
+
+  "cpu": {
+    "format": " {usage}%"
+  },
+
+  "memory": {
+    "format": " {}%"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "tray": {
+    "spacing": 10
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": true,
+    "tooltip-format": "Power menu",
+    "on-click": "~/.config/waybar/scripts/power-menu.sh"
+  },
+
+  "custom/systemmonitor": {
+  "format": "󰍛",
+  "tooltip": true,
+  "tooltip-format": "System Monitor\nLeft click: Mission Center\nRight click: btop",
+  "on-click": "missioncenter",
+  "on-click-right": "kitty -e btop"
+},
+"custom/powerprofile": {
+  "interval": 5,
+  "tooltip": true,
+  "tooltip-format": "Power profile\nLeft click: cycle profile",
+  "exec": "~/.config/waybar/scripts/power-profile-status.sh",
+  "on-click": "~/.config/waybar/scripts/power-profile-toggle.sh"
+}
+}

@@ -1,0 +1,11 @@
+*.log
+*.bak
+*.backup
+*.old
+*.tmp
+*~
+.vscode/
+*.png
+*.jpg
+*.jpeg
+*.webp
