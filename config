@@ -30,7 +30,10 @@
     "max-length": 45
   },
   "clock": {
-    "format": " {:%H:%M}"
+    "format": " {:%a %d %b  %H:%M}",
+    "tooltip-format": "<big>{:%A, %d %B %Y}</big>",
+    "on-click": "gnome-calendar",
+    "on-click-right": "swaync-client -t -sw"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
