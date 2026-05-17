@@ -42,8 +42,7 @@ window#waybar {
 #clock,
 #pulseaudio,
 #network,
-#cpu,
-#memory,
+#custom-resources,
 #battery,
 #custom-powerprofile,
 #tray,
@@ -68,12 +67,9 @@ window#waybar {
   color: #94e2d5;
 }
 
-#cpu {
+#custom-resources {
   color: #fab387;
-}
-
-#memory {
-  color: #cba6f7;
+  padding: 0 14px;
 }
 
 #battery {

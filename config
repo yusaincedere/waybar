@@ -12,9 +12,7 @@
   "modules-right": [
     "pulseaudio",
     "network",
-    "cpu",
-    "memory",
-    "disk",
+    "custom/resources",
     "battery",
     "custom/powerprofile",
     "tray",
@@ -63,11 +61,13 @@
     "format-ethernet": "󰈀 wired",
     "format-disconnected": "󰖪 offline"
   },
-  "cpu": {
-    "format": " {usage}%"
-  },
-  "memory": {
-    "format": " {}%"
+  "custom/resources": {
+    "exec": "~/.config/waybar/scripts/resources.sh",
+    "interval": 3,
+    "return-type": "json",
+    "tooltip": true,
+    "on-click": "missioncenter",
+    "on-click-right": "kitty -e btop"
   },
   "battery": {
     "format": "{icon} {capacity}%",
