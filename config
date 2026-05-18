@@ -96,6 +96,6 @@
     "format": "⏻",
     "tooltip": true,
     "tooltip-format": "Power menu",
-    "on-click": "~/.config/waybar/scripts/power-menu.sh"
+    "on-click": "bash -lc \"$HOME/.config/waybar/scripts/power-menu.sh\""
   }
 }
