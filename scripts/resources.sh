@@ -34,7 +34,7 @@ disk_percent=$(df -P /home | awk 'NR==2 {gsub("%","",$5); print $5}')
 disk_detail=$(df -h /home | awk 'NR==2 {print $3 " / " $2 " used, " $4 " free"}')
 
 # Compact display
-text=" ${cpu}   ${mem_percent}"
+text=$(printf " %3s   %3s" "$cpu" "$mem_percent")
 
 # Details on hover
 tooltip="CPU average: ${cpu}%\nRAM: ${mem_detail}\nDisk: ${disk_percent}%\nSpace: ${disk_detail}\n\nLeft click: Mission Center\nRight click: btop"
