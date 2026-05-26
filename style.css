@@ -7,14 +7,23 @@
   min-height: 0;
 }
 
+/* =========================
+   Main bar
+   ========================= */
+
 #waybar {
   background: rgba(20, 20, 28, 0.92);
   color: #ffffff;
 }
+
+/* =========================
+   Left side: home/workspaces/window
+   ========================= */
+
 #custom-home {
   background: transparent;
   color: #cdd6f4;
-  border-radius: 8px;
+  border-radius: 0;
   padding: 0;
   margin: 5px 2px 5px 6px;
   min-width: 28px;
@@ -35,7 +44,7 @@
 #workspaces button {
   background: transparent;
   color: #6c7086;
-  border-radius: 8px;
+  border-radius: 0;
   padding: 0;
   margin: 0 2px;
   min-width: 28px;
@@ -56,32 +65,51 @@
   background: rgba(137, 180, 250, 0.18);
   color: #cdd6f4;
 }
+
 #window {
   color: #cdd6f4;
   padding: 0 12px;
 }
 
-#clock,
+/* =========================
+   Center: clock
+   ========================= */
+
+#clock {
+  background: #313244;
+  color: #f9e2af;
+  padding: 0 14px;
+  margin: 5px 3px;
+  border-radius: 0;
+}
+
+/* =========================
+   Right side: connected status panel
+   ========================= */
+
 #pulseaudio,
 #custom-vpn,
 #custom-resources,
 #custom-batteryprofile,
 #tray,
+#custom-systemmonitor,
 #custom-power {
   background: #313244;
   color: #cdd6f4;
   padding: 0 12px;
-  margin: 5px 3px;
-  border-radius: 10px;
-}
-#clock {
-  color: #f9e2af;
+  margin: 5px 0;
+  border-radius: 0;
+  border-left: 1px solid #45475a;
 }
 
+/* First block begins the connected panel */
 #pulseaudio {
+  border-left: none;
+  margin-left: 3px;
   color: #89b4fa;
 }
 
+/* VPN */
 #custom-vpn.connected {
   color: #a6e3a1;
 }
@@ -89,18 +117,49 @@
 #custom-vpn.disconnected {
   color: #f38ba8;
 }
+
+/* Resource monitor */
 #custom-resources {
   color: #fab387;
   padding: 0 14px;
 }
 
+/* Battery / power profile */
 #custom-batteryprofile {
   color: #a6e3a1;
   padding: 0 14px;
 }
 
+/* System monitor launcher */
+#custom-systemmonitor {
+  color: #89b4fa;
+  padding: 0 12px;
+}
+
+/* Tray */
+#tray {
+  padding: 0 12px;
+}
+
+/* Power button ends the connected panel */
 #custom-power {
   color: #f38ba8;
   font-size: 18px;
   padding: 0 14px;
+  margin-right: 6px;
+}
+
+/* =========================
+   Optional hover feedback
+   ========================= */
+
+#clock:hover,
+#pulseaudio:hover,
+#custom-vpn:hover,
+#custom-resources:hover,
+#custom-batteryprofile:hover,
+#tray:hover,
+#custom-systemmonitor:hover,
+#custom-power:hover {
+  background: #45475a;
 }

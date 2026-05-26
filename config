@@ -71,7 +71,7 @@
     "return-type": "json",
     "interval": 5,
     "on-click": "~/.config/waybar/scripts/protonvpn-toggle.sh",
-    "on-click-right": "kitty -e protonvpn status",
+    "on-click-right": "ghostty +new-window -e protonvpn status",
     "tooltip": true
   },
   "custom/batteryprofile": {
@@ -87,7 +87,7 @@
     "return-type": "json",
     "tooltip": true,
     "on-click": "missioncenter",
-    "on-click-right": "kitty -e btop"
+    "on-click-right": "ghostty +new-window -e btop"
   },
   "tray": {
     "spacing": 10
